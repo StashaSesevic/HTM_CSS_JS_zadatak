@@ -1,0 +1,207 @@
+*{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: black;
+    color: whitesmoke;
+    box-sizing: border-box;
+    }
+     
+    h1{
+    text-align:center;
+    }
+
+    .napomena{
+        color: rgb(161, 38, 145);
+        text-align: right;
+        margin-right: 30px;
+    }
+
+    .vrstaclanarine,
+    .cena{
+        color: rgb(161, 38, 145);
+    }
+
+    .tabelica{
+        display: flex;
+        justify-content: center;
+    }
+    td {
+        text-align: left;
+      }
+
+      img[src="images/tegovi.jpeg"][alt="slika tegova"]{
+        width: 100%; 
+        height: auto;
+      }
+
+    /* --------meni----------------------------------------------- */
+    .meni{
+        display:flex;
+        color:white;
+        height:4em;
+        font-family:sans-serif;
+        position:sticky;
+        top:0;
+        }
+        .meni>ul{
+        padding:0;
+        margin:0;
+        display:flex;
+        flex:4;
+        align-items:center;
+        }
+        .meni>ul>li{
+        margin:0;
+        height:4em;
+        display:flex;
+        align-items:center;
+        padding: 0 3em;
+        }
+
+        #FGNEON{
+        display:flex;
+        align-items:center;
+        color:rgb(161, 38, 145);
+        font-size:2em;
+        margin: 0 0.5em;
+    }
+    
+        .meni>ul>li:hover,
+        .meni>ul>li:hover>a {
+            background-color:rgb(71, 18, 63);
+        }
+
+        .meni>ul>li>a {
+            text-decoration: none;
+        }
+
+        .meni>ul>li>a:hover {
+            transition: background-color 0.5s;
+          }
+          @media (min-width: 768px) and (max-width: 1023px) {
+            #FGNEON {
+                font-size: 1.7em;
+                margin: 0 0em;
+            }
+        }
+              /* .......................burger meni na mobilnom uredjaju........................... */
+
+@media screen and (max-width: 768px) {
+	.hamburger {
+		display: inline-block;
+		cursor: pointer;
+	}
+
+	.bar1, .bar2, .bar3 {
+		width: 35px;
+		height: 5px;
+		background-color: rgb(255, 255, 255);
+		margin: 6px 0;
+		transition: 0.4s;
+	}
+
+	/* Rotira prvu liniju */
+	.change .bar1 {
+		transform: translate(0, 11px) rotate(-45deg);
+	}
+
+	/* Nestaje druga linija  */
+	.change .bar2 {
+		opacity: 0;
+	}
+
+	/* Rotira poslednju liniju  */
+	.change .bar3 {
+		transform: translate(0, -11px) rotate(45deg);
+	}
+
+	.meni {
+		overflow: hidden;
+		position: sticky;
+		height: auto;
+	}
+		/* Da se sakriju stavke menija   */
+
+		.meni > ul > li {
+			display: none;
+			width: 100%;
+			/* cursor: pointer; */
+		}
+
+	#FGNEON {
+		font-size: 1.7em;
+		margin: 0 0em;
+	}
+
+	.meni > ul {
+		flex-direction: column;
+	}
+}
+/* .......................kraj burger menija........................... */
+        
+               /* ............................podesavanja za footer...................................... */
+.container{
+	max-width: 1170px;
+	margin:auto;
+}
+.footer-red{
+	display: flex;
+	flex-wrap: wrap;
+}
+ul{
+	list-style: none; /* uklanja "tackice" iz stavki liste*/
+}
+.footer{
+	background-color: #292b30;
+    padding: 70px 0;
+}
+.footer-kol{
+   width: 25%;
+   padding: 0 15px;
+}
+.footer-kol h4{
+	font-size: 18px;
+	color: #ffffff;
+    margin-top: 20px;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+}
+ .footer-kol h4::before{  /*namesta ljubicastu liniju ispod naslova u footeru */
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -10px;
+	background-color:rgb(161, 38, 145);
+	height: 2px;
+	box-sizing: border-box;
+	width: 50px;
+}
+.footer-kol ul li:not(:last-child){
+	margin-bottom: 15px; /*primeniće marginu od 10px na donji deo svakog takvog <li> elementa,ali samo na one <li> elemente koji nisu posledje dete unutar svojih <ul> roditelja*/
+}
+.footer-kol ul li a{
+	font-size: 16px;
+    color: #bbbbbb; 
+	text-decoration: none; /*uklanja podvlacenje teksta */
+	font-weight: 300; /*"tanji" font teksta */
+	transition: all 0.3s ease;  /* tranzicija, postepena promena u 0.3 sekunde.*/
+}
+ .footer-kol ul li a:hover{ /*ovim omogucavamo da tekst "iskoci" i "pobeli" kada predjemo misem preko njega */
+	color: #ffffff;
+	padding-left: 8px;
+}
+
+@media(max-width: 767px){
+  .footer-kol{
+    width: 50%;
+    margin-bottom: 30px;
+}
+}
+@media(max-width: 574px){
+  .footer-kol{
+    width: 100%;
+}
+}
+/* ............................kraj podesavanja za footer...................................... */
+
+

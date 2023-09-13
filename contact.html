@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style04.css">
+    <title>Kontakt</title>
+     <link rel="icon" href="images\favicon.ico" type="image/x-icon">
+     <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous">
+    </script>
+</head>
+<body>
+    
+    <nav class="meni">
+        <a href="#" id="FGNEON">Fitness & Gym NEON </a>
+        <ul>
+            <li><a class="menuItem" href="index.html">Početna</a></li>
+            <li><a class="menuItem" href="about.html">Usluge</a></li>
+            <li><a class="menuItem" href="cenovnik.html">Cenovnik</a></li>
+            <li><a class="menuItem" href="contact.html">Kontakt</a></li>
+        </ul>
+
+        <div class="hamburger" onclick="Funkcija1(this);Funkcija2()">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+    </nav>
+
+    <form id="forma01">
+        <h2>Kontakt</h2>
+        <br>
+    <label for="imePoruka">Vaše ime i prezime:</label> 
+    <input type="text" class="polje" id="imePoruka" name="ime" size="25" maxlength="30" placeholder="Upiši ovde">
+    <label for="mejlPoruka">Vaša e-mail adresa:</label>
+    <input type="text" class="polje" id="mejlPoruka" name="mejl" size="25" maxlength="40" placeholder="Upiši ovde">
+    <label for="telefonPoruka">Vaš broj mobilnog telefona:</label>
+    <input type="text" class="polje" id="telefonPoruka" name="telefon" size="25" maxlength="30" placeholder="Upiši ovde">
+       <br>
+       <br>
+    <textarea name="komentar" class="polje" id="komentar" cols="120" rows="5" placeholder="Upiši ovde"></textarea>
+    <br>
+    <br>
+      Želim da:
+      <br>
+    <input type="radio" name="vrstaPoruke" value="zakazivanje treninga">
+    zakažem trening
+    <br>
+    <input type="radio" name="vrstaPoruke" value="zamrzavanje članarine">
+    zamrznem članarinu
+    <br>
+    <input type="radio" name="vrstaPoruke" value="zapošljavanje">
+    se zaposlim
+    <br>
+    <input type="radio" name="vrstaPoruke" value="poslovna saradnja">
+    uspostavim poslovnu saradnju
+    <br>
+    <input type="radio" name="vrstaPoruke" value="pohvala/zamerka">
+    napišem pohvalu/zamerku
+    <br>
+    <input type="radio" name="vrstaPoruke" value="drugo"> 
+    drugo
+    <br>
+    <br>
+    Objekat u kom treniram/želim da radim:
+    <select name="objekat" id="objekat">
+        <option value="Zemun">Zemun</option>
+       <option value="Vračar">Vračar</option>
+        <optgroup label="Novi Beograd">
+            <option value="Fontana">Fontana</option>
+            <option value="Bežanijska Kosa">Bežanijska Kosa</option>
+        </optgroup>
+        <option value="Senjak" disabled="disabled">Senjak</option>
+        <option value="Nemam članarinu" selected>Nemam članarinu</option>
+    </select>
+    <br>
+    <br>
+    <button type="submit">Pošalji</button>
+    <button type="reset">Obriši</button>
+    <br>
+    <br>
+       </form>
+    <img src="images/tegovi.jpeg" alt="slika tegova"> 
+<!-- .............................footer..................................... -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-red">
+            <div class="footer-kol">
+                <h4>NEON teretana</h4>
+                <ul>
+                    <li><a href="index.html">O nama</a></li>
+                    <li><a href="about.html">Usluge</a></li>
+                    <li><a href="cenovnik.html">Cenovnik</a></li>
+                    <li><a href="contact.html">Kontakt</a></li>
+                    <br>
+
+                </ul>
+            </div>
+            <div class="footer-kol">
+                <h4>Česta pitanja</h4>
+                <ul>
+                    <li><a href="index.html#info">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-kol">
+                <h4>Treninzi</h4>
+                <ul>
+                    <li><a href="contact.html">Zakazivanje treninga</a></li>
+                    <li><a href="contact.html">Zamrzavanje članarine</a></li>
+                    <li><a href="contact.html">Zapošljavanje</a></li>
+                </ul>
+            </div>
+            <div class="footer-kol">
+                <h4>Zaprati nas</h4>
+                <ul>
+                    <li><a href="https://www.instagram.com/gymandfitness/?hl=en" target="_blank">Instagram: neon.fitness.gym</a></li>
+                    <li><a href="https://www.youtube.com/@Gym.1" target="_blank">YouTube: NEON Fitness & Gym</a></li>
+                </ul>
+            </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- ...................kraj footera..................... -->
+    <script src="script/script04.js">  </script>
+</body>
+</html>

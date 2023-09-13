@@ -1,0 +1,102 @@
+//kad kliknes na neko polje u formi ono dobije ljubicasti okvir, a kad se odfokusira onda sivi tanji; polje:focus ovo focus smo stavili da bi se efekat primenio samo na to jedno polje 
+//a ne na sva; this stavljamo iz istog razloga
+$(".polje").on("focus blur",function(event){
+    $(".polje:focus").css("border","4px solid purple");
+});
+$(".polje").on("blur",function(){
+    $(this).css("border","1px solid gray");
+});
+
+//za burger meni(burger u x i obrnuto, otvaranje i zatvaranje menija)
+function Funkcija1(x) {
+    x.classList.toggle("change");
+  }
+function Funkcija2() {
+    var menuItems = document.querySelectorAll(".meni>ul>li");
+    for (var i = 0; i < menuItems.length; i++) {
+        if (menuItems[i].style.display === "" || menuItems[i].style.display === "none") {
+            menuItems[i].style.display = "flex";
+        } else {
+            menuItems[i].style.display = "none";
+        }
+    }
+  }
+  
+//validacija i pop up prozor
+$(document).ready(function() {
+    $('#forma01').submit(function(event) {
+        event.preventDefault(); // Zaustavlja podrazumevano ponašanje forme (slanje na server). Na taj način možeš da izvršiš validaciju polja i prikaz poruka upozorenja pre nego što odlučiš da li će se forma zaista poslati na server ili ne
+        
+        // Validacija forme - provera da li su obavezna polja popunjena
+        var ime = $('#imePoruka').val();
+        var mejl = $('#mejlPoruka').val();
+        var telefon = $('#telefonPoruka').val();
+        var komentar = $('#komentar').val(); 
+        
+        if (ime === '' || mejl === '' || telefon === ''|| komentar === '') {
+            alert('Molimo popunite sva polja.');
+            return;
+        }
+        
+        // Provera da li mejlPoruka sadrži simbol '@'
+        if (mejl.indexOf('@') === -1) {
+            alert('E-mail adresa nije validna. Molimo unesite validnu e-mail adresu.');
+            return;
+        }
+        
+        // Provera da li telefonPoruka sadrži samo cifre
+        if (!/^\d+$/.test(telefon)) {
+            alert('Broj mobilnog telefona može sadržati samo cifre.');
+            return;
+        }
+        // Provera da li komentar sadrži najmanje 3 reči
+        var brojReci = komentar.split(/\s+/).filter(function(word) {
+            return word.length > 0;
+        }).length;
+        
+        if (brojReci < 3) {
+            alert('Komentar mora sadržati najmanje 3 reči.');
+            return;
+        }
+        
+        // Prikaz podataka u pop-up prozoru
+        var podaci = 'Vaše ime i prezime: ' + ime +
+                     '\nVaša e-mail adresa: ' + mejl +
+                     '\nVaš broj mobilnog telefona: ' + telefon +
+                     '\nKomentar: ' + $('#komentar').val() +
+                     '\nŽelim: ' + $('input[name="vrstaPoruke"]:checked').val() +
+                     '\nObjekat: ' + $('#objekat').val();
+                     
+        alert(podaci);
+    });
+});
+
+//KOMENTAR MORA DA SADRZI NAJMANJE 3 RECI:
+// komentar.split(/\s+/) - Ova linija koristi metodu split nad sadržajem polja komentar. 
+// Metoda split razdvaja tekst na delove koristeći regularni izraz \s+ koji predstavlja jedan ili 
+// više uzastopnih razmaka (bela mesta). To znači da će tekst biti podeljen na reči gde god postoje razmaci između njih.
+// .filter(function(word) { return word.length > 0; }) - Nakon što se tekst podeli na reči, 
+// koristimo filter metodu da bismo izdvojili samo one reči koje imaju dužinu (broj karaktera) veću od 0. 
+// Ovo se radi da bi se eliminisali prazni delovi teksta, na primer, ako ima više uzastopnih razmaka.
+//.length - Na kraju, koristimo .length da bismo izbrojali koliko reči ima nakon filtriranja.
+// if (brojReci < 3) - Nakon što smo izbrojali reči, koristimo ovu uslovnu izjavu da bismo 
+// proverili da li je broj reči manji od 3. Ako jeste, to znači da komentar nema dovoljno reči i 
+// korisnik će dobiti poruku upozorenja.
+
+// MEJL ADRESA MORA DA SADRZI @ 
+// Za proveru uslova za e-mail adrese koristimo indexOf('@'). 
+// Ako simbol '@' nije pronađen u unetom e-mailu, korisnik će dobiti poruku upozorenja.
+
+// PROVERA DA LI BROJ TELEFONA SADRZI SAMOCIFRE
+// ^\d+$ - Ovo je regularni izraz koji se koristi za proveru da li se ceo string sastoji samo od cifara. 
+// Evo šta svaki deo ovog izraza znači:
+// ^ označava početak stringa.
+// \d+ znači jednu ili više cifara. \d predstavlja bilo koju cifru od 0 do 9, 
+// a + označava da se cifra može pojaviti jednom ili više puta.
+// $ označava kraj stringa.
+// test(telefon) - Metoda test se primenjuje na regularni izraz (/^\d+$/) i proverava da li se string 
+// koji je prosleđen (u ovom slučaju, vrednost polja telefonPoruka) podudara sa tim obrascem. Ako se podudara, 
+// test funkcija vraća true, a ako se ne podudara, vraća false.
+// if (!/^\d+$/.test(telefon)) - Ova uslovna izjava proverava rezultat test funkcije. Ako test funkcija
+//  vrati false (što znači da se u polju telefonPoruka ne nalaze samo cifre), tada će se prikazati poruka 
+//  upozorenja i izvršavanje funkcije će biti prekinuto.
