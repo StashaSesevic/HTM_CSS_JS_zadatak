@@ -70,33 +70,3 @@ $(document).ready(function() {
         alert(podaci);
     });
 });
-
-//KOMENTAR MORA DA SADRZI NAJMANJE 3 RECI:
-// komentar.split(/\s+/) - Ova linija koristi metodu split nad sadržajem polja komentar. 
-// Metoda split razdvaja tekst na delove koristeći regularni izraz \s+ koji predstavlja jedan ili 
-// više uzastopnih razmaka (bela mesta). To znači da će tekst biti podeljen na reči gde god postoje razmaci između njih.
-// .filter(function(word) { return word.length > 0; }) - Nakon što se tekst podeli na reči, 
-// koristimo filter metodu da bismo izdvojili samo one reči koje imaju dužinu (broj karaktera) veću od 0. 
-// Ovo se radi da bi se eliminisali prazni delovi teksta, na primer, ako ima više uzastopnih razmaka.
-//.length - Na kraju, koristimo .length da bismo izbrojali koliko reči ima nakon filtriranja.
-// if (brojReci < 3) - Nakon što smo izbrojali reči, koristimo ovu uslovnu izjavu da bismo 
-// proverili da li je broj reči manji od 3. Ako jeste, to znači da komentar nema dovoljno reči i 
-// korisnik će dobiti poruku upozorenja.
-
-// MEJL ADRESA MORA DA SADRZI @ 
-// Za proveru uslova za e-mail adrese koristimo indexOf('@'). 
-// Ako simbol '@' nije pronađen u unetom e-mailu, korisnik će dobiti poruku upozorenja.
-
-// PROVERA DA LI BROJ TELEFONA SADRZI SAMOCIFRE
-// ^\d+$ - Ovo je regularni izraz koji se koristi za proveru da li se ceo string sastoji samo od cifara. 
-// Evo šta svaki deo ovog izraza znači:
-// ^ označava početak stringa.
-// \d+ znači jednu ili više cifara. \d predstavlja bilo koju cifru od 0 do 9, 
-// a + označava da se cifra može pojaviti jednom ili više puta.
-// $ označava kraj stringa.
-// test(telefon) - Metoda test se primenjuje na regularni izraz (/^\d+$/) i proverava da li se string 
-// koji je prosleđen (u ovom slučaju, vrednost polja telefonPoruka) podudara sa tim obrascem. Ako se podudara, 
-// test funkcija vraća true, a ako se ne podudara, vraća false.
-// if (!/^\d+$/.test(telefon)) - Ova uslovna izjava proverava rezultat test funkcije. Ako test funkcija
-//  vrati false (što znači da se u polju telefonPoruka ne nalaze samo cifre), tada će se prikazati poruka 
-//  upozorenja i izvršavanje funkcije će biti prekinuto.
